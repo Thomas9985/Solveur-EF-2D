@@ -1,0 +1,10 @@
+name: octave-env
+channels:
+  - conda-forge
+dependencies:
+  - octave
+  - numpy
+  - matplotlib
+  - pip
+  - pip:
+      - octave_kernel
