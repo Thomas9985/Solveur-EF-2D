@@ -3,7 +3,6 @@ FROM jupyter/minimal-notebook
 USER root
 RUN apt-get update && apt-get install -y \
     octave \
-    octave-symbolic \
     && rm -rf /var/lib/apt/lists/*
 
 # Installer le kernel Octave pour Jupyter
