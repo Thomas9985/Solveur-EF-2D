@@ -4,7 +4,7 @@ Paramètres : str_integrand_unknown : "u" ou "Du"
               str_cofvar : 
               mesh_geo : mesh utilisée pour la méthode
               degree_EF : 1 ou 2  (degré de la méthode éléments finis)
-              number : 1 ou 3 (degré de la méthode de quadrature)
+              number : 1 ou 3 (degré de la méthode de quadrature pour calculer l'intégrale)
               """
 
 function A = assemble_matrix(str_integrand_unknown,str_integrand_test,str_cofvar,mesh_geo,degree_EF,number)
