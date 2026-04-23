@@ -1,6 +1,6 @@
-%Script calcul de la solution
-%Approximation P1
-%Attendre 5 mn pour l'affichage
+%Script pour résoudre l'équation aux dérivées partielles -Δu + u = f ou Δu = f avec f(x, y) = (2π2 + 1) cos(πx) cos(πy)
+%Approximation éléments finis P1
+%Affichage un peu long
 
 liste_h = [1/2 1/4 1/8 1/16];  % petit h à gauche
 err_relative_1 = zeros(length(liste_h),1);
@@ -18,7 +18,7 @@ for i = 1:length(liste_h)
 
 endfor
 
-#%Approximation P2
+#%Approximation éléments finis P2
 
 liste_h = [1/2 1/4 1/8 1/16];
 
@@ -71,13 +71,19 @@ title("Erreur maximale de la solution en fonction de la taille du maillage pour 
 
 disp([p11(1),p22(1),p1(1),p2(1)]) %affiche les coefficients directeurs des droites.
 
+
+
 % (a) Approximation P1
-% J'obtiens des résultats qui me semblent cohérents. Les coefficients des droites de régression sont légèrement trop faibles pour l'erreur relative.
-% Ils devraient être autour de 2. J'ai 1.6 pour l'erreur relative et 1.9 pour l'erreur maximale.
-% Peut-être des erreurs dans les valeurs des fonctions dans les programmes. Je ne sais pas. J'ai pas mal revu mes programmes. Toutes les fonctions marchent bien.
-% L'affichage des droites de régression est bizarre.
+
+% Les résultats obtenus sont cohérents. L'ordre de convergence est 2 pour l'erreur relative et environ 2 pour l'erreur maximale.
+% Les coefficients des droites de régression sont légèrement faibles.
+% Cela est probablement dû  au maillage qui réinialisé à chaque étape. Les points de départ sur la frontière du domaine changent à chaque nouvelle simulation.
+
 
 %(b) Approximation P2
-% J'obtiens des résultats cohérents. Les coefficients sont toujours légèrement trop faibles. J'ai 2.4 pour l'erreur relative et 2.8 pour l'erreur maximale.
-% Je ne sais pas où est l'erreur peut-être dans l'affichage. L'affiche des droites est étrange.
+
+% Les résultats obtenus sont cohérents. Les coefficients sont  légèrement faibles. 
+# Les ordres de convergence sont 3 pour l'erreur relative et environ 3 pour l'erreur maximale.
+# On obtient 2.4 pour l'erreur relative et 2.8 pour l'erreur maximale. 
+# La cause de ces erreurs est probablement la même que pour les éléments P1.
 
